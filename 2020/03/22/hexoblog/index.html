@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>使用 Hexo + Github 搭建静态博客 - Jeson</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="咸鱼博客,
+提前安装好 GIT 和Node.js，其中 GIT 需要配置好 SSH key
+
+配置 hexo安装 hexo
+1npm install -g hexo-cli
+
+创建 blog 目录
+1hexo,"> 
+    <meta name="author" content="Jeosn"> 
+    <link rel="alternative" href="atom.xml" title="Jeson" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Jeson</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://www.jeson.club"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">使用 Hexo + Github 搭建静态博客</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">使用 Hexo + Github 搭建静态博客</h1>
+        <div class="stuff">
+            <span>三月 22, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <blockquote>
+<p>提前安装好 GIT 和Node.js，其中 GIT 需要配置好 SSH key</p>
+</blockquote>
+<h4 id="配置-hexo"><a href="#配置-hexo" class="headerlink" title="配置 hexo"></a>配置 hexo</h4><p><strong>安装 hexo</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建 blog 目录</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+
+<p><strong>安装相关依赖</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><strong>基础配置</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">''</span>        <span class="comment"># 标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">''</span>     <span class="comment"># 副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span>  <span class="comment"># 描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">''</span>     <span class="comment"># 关键字</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">''</span>       <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>  <span class="comment"># 语言</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span>     <span class="comment"># 时区</span></span><br></pre></td></tr></table></figure>
+
+<p>其他配置详见<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">官方文档</a></p>
+<p><strong>本地启动</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可查看欢迎页</p>
+<h4 id="修改主题-可选"><a href="#修改主题-可选" class="headerlink" title="修改主题(可选)"></a>修改主题(可选)</h4><blockquote>
+<p>hexo 主题多种多样，只需要 clone 到 ./themes 中即可，操作步骤大同小异</p>
+</blockquote>
+<p>这里以<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">diaspora</a>主题为例</p>
+<p><strong>安装主题</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora</span><br></pre></td></tr></table></figure>
+
+<p><strong>启用主题</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p>详细配置可参考不同主题的文档</p>
+<p><strong>预览主题</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h4 id="Github-绑定"><a href="#Github-绑定" class="headerlink" title="Github 绑定"></a>Github 绑定</h4><p><strong>创建仓库</strong></p>
+<p>创建一个名为<code>username.github.io</code>的仓库，其中 <strong>username</strong> 为你的用户名</p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/a44afb59b9add87b.png" alt="hexoblog-1"></p>
+<p><strong>配置 Github 地址</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:jesongit/jesongit.github.io.git</span> <span class="comment"># 修改为自己的 ssh 链接</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>部署到 Github</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>此时访问 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 已经可以浏览站点了</p>
+<blockquote>
+<p>若出现 git 报错，ERROR Deployer not found: git，将 git 插件卸载再安装就好了</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="域名绑定（可选）"><a href="#域名绑定（可选）" class="headerlink" title="域名绑定（可选）"></a>域名绑定（可选）</h4><blockquote>
+<p>有些同学可能对 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 这个域名并不满意，希望替换到自己域名</p>
+</blockquote>
+<p><strong>域名申请</strong></p>
+<blockquote>
+<p> 推荐去国外的域名注册商除注册，不需要备案，非常快</p>
+</blockquote>
+<p>演示已经在 <a href="https://sg.godaddy.com/zh" target="_blank" rel="noopener">GoDaddy</a> 注册好域名 <code>jeosn.club</code></p>
+<p><strong>配置CNAME</strong></p>
+<p>在 <code>./source</code> 中创建名为 <code>CNAME</code> 的文件，保存申请的域名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.jeson.club</span><br></pre></td></tr></table></figure>
+
+<p>上传 <code>CNAME</code></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p><strong>域名解析</strong></p>
+<blockquote>
+<p>推荐使用<a href="https://console.dnspod.cn/" target="_blank" rel="noopener">DNSPod</a>（需要注册），GoGaddy提供的解析，<code>CNAME</code>无法添加 <strong>@</strong> 记录</p>
+</blockquote>
+<p>在 <strong>DNS 管理</strong>中，修改自定义域名服务器为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code></p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/2893603acfc40c65.png" alt="hexoblog-2"></p>
+<p>在 <strong>DNSPod</strong> 中添加 2 条 <code>CNAME</code> 记录即可</p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/b10b899c3e5e37d4.png" alt="hexoblog-3"></p>
+<p>在浏览器中输入域名即可访问站点</p>
+<blockquote>
+<p>图片支持基于 <a href="https://github.com/helloxz/imgurl" target="_blank" rel="noopener">ImgUrl</a> 自建图床</p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci='9c5dd73f2eb85196a1e3'
+        data-cs='e1edacb8aad39dfd533a58646f134816d501ec3a'
+        data-r='jesongit.github.io'
+        data-o='jesongit'
+        data-a='jesongit'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

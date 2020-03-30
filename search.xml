@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>多终端编辑 hexo 博客</title>
+    <url>/2020/03/31/multi-terminal-hexo/</url>
+    <content><![CDATA[<blockquote>
+<p>  默认已构建好 <code>hexo</code> 博客，此处通过分支对源文件进行管理，也可以另建仓库管理</p>
+</blockquote>
+<p><strong>配置 <code>.gitignore</code> 文件（可选）</strong></p>
+<blockquote>
+<p>  出于安全考虑，不上传配置文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules&#x2F;</span><br><span class="line">public&#x2F;</span><br><span class="line">.deploy*&#x2F;</span><br><span class="line">_config.yml</span><br></pre></td></tr></table></figure>
+
+<p><strong>重新进行版本控制</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注意替换为自己的仓库</span></span><br><span class="line">git init                   # 初始化本地仓库</span><br><span class="line">git add -A                 # 添加本地所有文件到仓库        </span><br><span class="line">git commit -m "blog源文件"  # 添加 commit</span><br><span class="line">git branch hexo            # 创建本地仓库分支 hexo</span><br><span class="line"><span class="meta">#</span><span class="bash"> origin是本地分支,remote add操作会将本地仓库映射到云端</span></span><br><span class="line">git remote add origin git@github.com:jesongit/jesongit.github.io.git</span><br><span class="line">git push origin hexo       # 将本地仓库的源文件推送到远程仓库 hexo 分支</span><br></pre></td></tr></table></figure>
+
+<p><strong>其他终端</strong></p>
+<blockquote>
+<p>  默认配置好 <code>SSH KEY</code>，安装好 <code>Node.js</code> 等环境</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b hexo git@github.com:jesongit/jesongit.github.io.git</span><br><span class="line">cd hexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><strong>上传源文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add *</span><br><span class="line">git commit -m "update"</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p><strong>同步源文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin hexo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 Hexo + Github 搭建静态博客</title>
+    <url>/2020/03/22/hexoblog/</url>
+    <content><![CDATA[<blockquote>
+<p>提前安装好 GIT 和Node.js，其中 GIT 需要配置好 SSH key</p>
+</blockquote>
+<h4 id="配置-hexo"><a href="#配置-hexo" class="headerlink" title="配置 hexo"></a>配置 hexo</h4><p><strong>安装 hexo</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建 blog 目录</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+
+<p><strong>安装相关依赖</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><strong>基础配置</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">''</span>        <span class="comment"># 标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">''</span>     <span class="comment"># 副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span>  <span class="comment"># 描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">''</span>     <span class="comment"># 关键字</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">''</span>       <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>  <span class="comment"># 语言</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span>     <span class="comment"># 时区</span></span><br></pre></td></tr></table></figure>
+
+<p>其他配置详见<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">官方文档</a></p>
+<p><strong>本地启动</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可查看欢迎页</p>
+<h4 id="修改主题-可选"><a href="#修改主题-可选" class="headerlink" title="修改主题(可选)"></a>修改主题(可选)</h4><blockquote>
+<p>hexo 主题多种多样，只需要 clone 到 ./themes 中即可，操作步骤大同小异</p>
+</blockquote>
+<p>这里以<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">diaspora</a>主题为例</p>
+<p><strong>安装主题</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora</span><br></pre></td></tr></table></figure>
+
+<p><strong>启用主题</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p>详细配置可参考不同主题的文档</p>
+<p><strong>预览主题</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h4 id="Github-绑定"><a href="#Github-绑定" class="headerlink" title="Github 绑定"></a>Github 绑定</h4><p><strong>创建仓库</strong></p>
+<p>创建一个名为<code>username.github.io</code>的仓库，其中 <strong>username</strong> 为你的用户名</p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/a44afb59b9add87b.png" alt="hexoblog-1"></p>
+<p><strong>配置 Github 地址</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:jesongit/jesongit.github.io.git</span> <span class="comment"># 修改为自己的 ssh 链接</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>部署到 Github</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>此时访问 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 已经可以浏览站点了</p>
+<blockquote>
+<p>若出现 git 报错，ERROR Deployer not found: git，将 git 插件卸载再安装就好了</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="域名绑定（可选）"><a href="#域名绑定（可选）" class="headerlink" title="域名绑定（可选）"></a>域名绑定（可选）</h4><blockquote>
+<p>有些同学可能对 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 这个域名并不满意，希望替换到自己域名</p>
+</blockquote>
+<p><strong>域名申请</strong></p>
+<blockquote>
+<p> 推荐去国外的域名注册商除注册，不需要备案，非常快</p>
+</blockquote>
+<p>演示已经在 <a href="https://sg.godaddy.com/zh" target="_blank" rel="noopener">GoDaddy</a> 注册好域名 <code>jeosn.club</code></p>
+<p><strong>配置CNAME</strong></p>
+<p>在 <code>./source</code> 中创建名为 <code>CNAME</code> 的文件，保存申请的域名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.jeson.club</span><br></pre></td></tr></table></figure>
+
+<p>上传 <code>CNAME</code></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p><strong>域名解析</strong></p>
+<blockquote>
+<p>推荐使用<a href="https://console.dnspod.cn/" target="_blank" rel="noopener">DNSPod</a>（需要注册），GoGaddy提供的解析，<code>CNAME</code>无法添加 <strong>@</strong> 记录</p>
+</blockquote>
+<p>在 <strong>DNS 管理</strong>中，修改自定义域名服务器为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code></p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/2893603acfc40c65.png" alt="hexoblog-2"></p>
+<p>在 <strong>DNSPod</strong> 中添加 2 条 <code>CNAME</code> 记录即可</p>
+<p><img src="http://pic.jeson.club:39999/imgs/2020/03/b10b899c3e5e37d4.png" alt="hexoblog-3"></p>
+<p>在浏览器中输入域名即可访问站点</p>
+<blockquote>
+<p>图片支持基于 <a href="https://github.com/helloxz/imgurl" target="_blank" rel="noopener">ImgUrl</a> 自建图床</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
