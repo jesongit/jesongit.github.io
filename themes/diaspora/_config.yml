@@ -77,9 +77,9 @@ hitokoto: true
 links:
     facebook: /
     twitter: /
-    github: /
-    wechat: /img/logo.png
-    email: mailto:xxxx@gmail.com
+    github: https://github.com/jesongit/jesongit.github.io
+    wechat: /img/wechat.png
+    email: mailto:188380780@qq.com
   
 # 备案
 beian: 
