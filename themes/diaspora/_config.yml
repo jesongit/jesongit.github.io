@@ -22,40 +22,38 @@ welcome_cover: /img/IMG_4394.JPG
 
 # 默认文章封面图（随机调用,支持外链）
 cover: 
-  - http://pic.jeson.club:39999/imgs/2020/03/0a72a9d1df97bee2.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/15305e90d4de3233.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/705421309817bd66.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/30e82df165314638.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/0a62a47e4776630f.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/2d474e0383062fb7.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/b058dec6772c7939.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/067643167d1cef38.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/e5106021b2b58d34.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/80d0f5b0cde8c166.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/a2fbd0d9164b7f80.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/b06717411882aa17.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/ac622e207ca9be79.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/e322d0f285edef7d.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/e6e8b20b0900930c.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/01e587c1e20f6913.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/b20ebee9e40dbf45.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/bcd54ae850252acb.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/c30f22d13d8281fc.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/b039a04fe7a39af4.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/dac0265617f52af3.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/543de2417d4098d6.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/2b52a0141eb346ae.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/925d678ef8669b7d.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/543de2417d4098d6.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/b791a9794eb67cd3.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/2b77cc073829bee1.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/7cc2dfec540b7546.png
-  - http://pic.jeson.club:39999/imgs/2020/03/67ff1c7b931f0f5c.png
-  - http://pic.jeson.club:39999/imgs/2020/03/67ff1c7b931f0f5c.png
-  - http://pic.jeson.club:39999/imgs/2020/03/8c86452da65a87ab.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/7cc2cbd7679ac430.jpg
-  - http://pic.jeson.club:39999/imgs/2020/03/710f8997ad178f31.png
-  - http://pic.jeson.club:39999/imgs/2020/03/b3691af408296b2b.png
+  - http://img.jeson.club:26/2020/03/31/70f811f378e9a.jpg
+  - http://img.jeson.club:26/2020/03/31/b108fa8b26529.jpg
+  - http://img.jeson.club:26/2020/03/31/7e0f0581d82d5.jpg
+  - http://img.jeson.club:26/2020/03/31/5ae8b4b6b35aa.jpg
+  - http://img.jeson.club:26/2020/03/31/d8d9df4298036.jpg
+  - http://img.jeson.club:26/2020/03/31/feae378bc5b91.jpg
+  - http://img.jeson.club:26/2020/03/31/21d19a8464625.jpg
+  - http://img.jeson.club:26/2020/03/31/513f9f5d029ad.jpg
+  - http://img.jeson.club:26/2020/03/31/f2f935ddf56bf.jpg
+  - http://img.jeson.club:26/2020/03/31/350aae6470b2c.jpg
+  - http://img.jeson.club:26/2020/03/31/54087529e6108.jpg
+  - http://img.jeson.club:26/2020/03/31/69adab8b24a3b.jpg
+  - http://img.jeson.club:26/2020/03/31/9a8f2473598c7.jpg
+  - http://img.jeson.club:26/2020/03/31/99626e2869f2c.jpg
+  - http://img.jeson.club:26/2020/03/31/54f93398c30cf.jpg
+  - http://img.jeson.club:26/2020/03/31/271cabf219491.jpg
+  - http://img.jeson.club:26/2020/03/31/289a861c2c375.jpg
+  - http://img.jeson.club:26/2020/03/31/0143150f9561c.jpg
+  - http://img.jeson.club:26/2020/03/31/8af430ab32acf.jpg
+  - http://img.jeson.club:26/2020/03/31/90609929ca086.jpg
+  - http://img.jeson.club:26/2020/03/31/82dd97ab5fafc.jpg
+  - http://img.jeson.club:26/2020/03/31/5a4804631b426.jpg
+  - http://img.jeson.club:26/2020/03/31/6f98a9caa482d.jpg
+  - http://img.jeson.club:26/2020/03/31/d0f27550f3aff.jpg
+  - http://img.jeson.club:26/2020/03/31/e4ba0d0037454.jpg
+  - http://img.jeson.club:26/2020/03/31/3fb10dc94e1be.png
+  - http://img.jeson.club:26/2020/03/31/9f3a7d40e68a0.png
+  - http://img.jeson.club:26/2020/03/31/284ef477c3818.jpg
+  - http://img.jeson.club:26/2020/03/31/51b3017f3897b.png
+  - http://img.jeson.club:26/2020/03/31/a4461209d56a6.jpg
+  - http://img.jeson.club:26/2020/03/31/ab033dd4aa807.jpg
+  - http://img.jeson.club:26/2020/03/31/70e460e5f8e26.png
 
  
 # 是否使用mathjax

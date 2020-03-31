@@ -90,7 +90,7 @@ hexo s
 
 创建一个名为<code>username.github.io</code>的仓库，其中 **username** 为你的用户名
 
-![hexoblog-1](http://pic.jeson.club:39999/imgs/2020/03/a44afb59b9add87b.png)
+![hexoblog-1](http://img.jeson.club:26/2020/03/31/ef060ee8dffe4.png)
 
 **配置 Github 地址**
 
@@ -148,11 +148,11 @@ hexo d
 
 在 **DNS 管理**中，修改自定义域名服务器为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code>
 
-![hexoblog-2](http://pic.jeson.club:39999/imgs/2020/03/2893603acfc40c65.png)
+![hexoblog-2](http://img.jeson.club:26/2020/03/31/45fc91522dc50.png)
 
 在 **DNSPod** 中添加 2 条 <code>CNAME</code> 记录即可
 
-![hexoblog-3](http://pic.jeson.club:39999/imgs/2020/03/b10b899c3e5e37d4.png)
+![hexoblog-3](http://img.jeson.club:26/2020/03/31/09a2b2513b5c2.png)
 
 在浏览器中输入域名即可访问站点
-> 图片支持基于 [ImgUrl](https://github.com/helloxz/imgurl) 自建图床
+> 图片支持基于 [Lsky Pro](https://github.com/wisp-x/lsky-pro) 自建图床
