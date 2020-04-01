@@ -1,6 +1,371 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown —— 一款轻量级标记语言</title>
+    <url>/2020/04/01/markdown/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Markdown是一种可以使用普通文本编辑器编写的<strong>标记语言</strong>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+<h2 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h2><table>
+<thead>
+<tr>
+<th align="left">效果</th>
+<th align="left">Markdown</th>
+<th align="left">快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">粗体</td>
+<td align="left"><code>**text**</code></td>
+<td align="left">Ctrl/⌘ + B</td>
+</tr>
+<tr>
+<td align="left">斜体</td>
+<td align="left"><code>*text*</code></td>
+<td align="left">Ctrl/⌘ + I</td>
+</tr>
+<tr>
+<td align="left">超链接</td>
+<td align="left"><code>[title](http://)</code></td>
+<td align="left">Ctrl/⌘ + K</td>
+</tr>
+<tr>
+<td align="left">内嵌代码</td>
+<td align="left"><code>`code`</code></td>
+<td align="left">⌃ + `</td>
+</tr>
+<tr>
+<td align="left">图片</td>
+<td align="left"><code>![alt](http://)</code></td>
+<td align="left">Ctrl/⌘ + Shift + I</td>
+</tr>
+<tr>
+<td align="left">列表</td>
+<td align="left"><code>* item</code></td>
+<td align="left">Ctrl + L</td>
+</tr>
+<tr>
+<td align="left">Blockquote</td>
+<td align="left"><code>&gt; quote</code></td>
+<td align="left">Ctrl + Q</td>
+</tr>
+<tr>
+<td align="left">一级标题</td>
+<td align="left"><code># title</code></td>
+<td align="left">⌘ + 1</td>
+</tr>
+<tr>
+<td align="left">二级标题</td>
+<td align="left"><code>## title</code></td>
+<td align="left">⌘ + 2</td>
+</tr>
+<tr>
+<td align="left">三级标题</td>
+<td align="left"><code>### title</code></td>
+<td align="left">⌘ + 3</td>
+</tr>
+</tbody></table>
+<h2 id="更多语法"><a href="#更多语法" class="headerlink" title="更多语法"></a>更多语法</h2><blockquote>
+<p>图片展示及快捷键来自 <code>Typora</code> ，在不同地方可能存在差异</p>
+</blockquote>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一级标题</td>
+<td><code># title</code></td>
+<td>⌘ + 1</td>
+</tr>
+<tr>
+<td>二级标题</td>
+<td><code>## title</code></td>
+<td>⌘ + 2</td>
+</tr>
+<tr>
+<td>三级标题</td>
+<td><code>### title</code></td>
+<td>⌘ + 3</td>
+</tr>
+<tr>
+<td>四级标题</td>
+<td><code>#### title</code></td>
+<td>⌘ + 4</td>
+</tr>
+<tr>
+<td>五级标题</td>
+<td><code>##### title</code></td>
+<td>⌘ + 5</td>
+</tr>
+<tr>
+<td>六级标题</td>
+<td><code>###### title</code></td>
+<td>⌘ + 6</td>
+</tr>
+</tbody></table>
+<img src="http://img.jeson.club:26/2020/04/01/65903fde90378.png" alt="image-20200401121617066.png" style="zoom:50%;" />
+
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><blockquote>
+<p>不同效果可搭配使用</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>粗体</td>
+<td><code>**text**</code></td>
+<td>Ctrl/⌘ + B</td>
+</tr>
+<tr>
+<td>斜体</td>
+<td><code>*text*</code> 或 <code>_text_</code></td>
+<td>Ctrl/⌘ + I</td>
+</tr>
+<tr>
+<td>删除</td>
+<td><code>~~text~~</code></td>
+<td>⌃ + ⇧ + `</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td><code>&lt;u&gt;test&lt;/u&gt;</code></td>
+<td>Ctrl/⌘ + U</td>
+</tr>
+</tbody></table>
+<p><strong>粗体</strong>    <em>斜体</em>    <del>删除</del>    <u>下划线</u>    <strong><em>粗斜体</em></strong>    <strong><em><del>粗斜删除</del></em></strong>    <strong><em><del><u>粗斜体删除下划</u></del></em></strong></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
+<p>可嵌套使用，<strong>缩进 4 个空格</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>无序列表</td>
+<td><code>* list</code> 或 <code>- list</code> 或 <code>+ list</code></td>
+<td>⌥ + ⌘ + U</td>
+</tr>
+<tr>
+<td>有序列表</td>
+<td><code>1. liist</code></td>
+<td>⌥ + ⌘ + O</td>
+</tr>
+<tr>
+<td>任务列表</td>
+<td>未选中：<code>- [ ] list</code><br />已选中：<code>- [x] list</code></td>
+<td>⌥ + ⌘ + X</td>
+</tr>
+</tbody></table>
+<img src="http://img.jeson.club:26/2020/04/01/bed1dc787f9a9.png" alt="image-20200401175933417.png" style="zoom:50%;" />
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内嵌代码</td>
+<td><code>`code`</code></td>
+<td>⌃ + `</td>
+</tr>
+<tr>
+<td>代码块</td>
+<td><code>```java</code> 或  <code>~~~java</code> <br />code<br /><code>```</code> 或 <code>~~~</code></td>
+<td>Ctrl/⌘ + Alt/⌥ + C</td>
+</tr>
+</tbody></table>
+<p><code>code</code>    </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>超链接</td>
+<td><code>[title](http://)</code> 或<code>&lt;http://&gt;</code></td>
+<td>Ctrl/⌘ + K</td>
+</tr>
+<tr>
+<td>图片（标题可选）</td>
+<td><code>![alt](http:// &quot;title&quot;)</code></td>
+<td>Ctrl/⌘ + Shift + I</td>
+</tr>
+</tbody></table>
+<p><a href="https://www.jeson.club/">示例超链接</a>    <a href="https://www.jeson.club/">https://www.jeson.club/</a></p>
+<p><img src="http://img.jeson.club:26/2020/03/31/284ef477c3818.jpg" alt="示例图片" title="这是示例标题"></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>表格</td>
+<td>表头：`</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content</td>
+<td align="right">content</td>
+<td align="center">content</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>更多表格相关内容请参考<a href="http://support.typora.io/Table-Editing/">官方文档</a></p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><blockquote>
+<p>更多 <code>emoji</code> 参考<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">对照表</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分割线</td>
+<td><code>—--</code> 或 <code>~~~</code> 或 <code>___</code></td>
+<td>⌥ + ⌘ + -</td>
+</tr>
+<tr>
+<td>块引用（可嵌套）</td>
+<td><code>&gt; quote</code></td>
+<td>⌥ + ⌘ + Q</td>
+</tr>
+<tr>
+<td>目录</td>
+<td><code>[TOC]</code></td>
+<td></td>
+</tr>
+<tr>
+<td>脚注</td>
+<td>声明脚注：<code>text[^text1]</code><br />定义脚注：<code>[^text1]:text2</code></td>
+<td>⌥ + ⌘ + R</td>
+</tr>
+<tr>
+<td>Emoji 表情</td>
+<td><code>:smile:</code></td>
+<td></td>
+</tr>
+<tr>
+<td>转义字符</td>
+<td><code>\ + 符号</code> 或 使用空格分割</td>
+<td></td>
+</tr>
+</tbody></table>
+<img src="http://img.jeson.club:26/2020/04/01/fe872ca40cb14.png" alt="Snipaste_2020-04-01_18-50-43 _1_.png" style="zoom:50%;" />
+
+<h2 id="Markdown-扩展语法"><a href="#Markdown-扩展语法" class="headerlink" title="Markdown 扩展语法"></a>Markdown 扩展语法</h2><h3 id="常用扩展语法"><a href="#常用扩展语法" class="headerlink" title="常用扩展语法"></a>常用扩展语法</h3><blockquote>
+<p>扩展语法不是所有地方都支持，<code>Typora</code> 支持以下所有语法</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>语法</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上标</td>
+<td><code>y = x^2^</code></td>
+<td></td>
+</tr>
+<tr>
+<td>下标</td>
+<td><code>H~2~o</code></td>
+<td></td>
+</tr>
+<tr>
+<td>高亮</td>
+<td><code>==key==</code></td>
+<td>⇧ + ⌘ + H</td>
+</tr>
+<tr>
+<td>内联公式</td>
+<td><code>$lim_{x \to \infty} \ exp(-x)=0$</code></td>
+<td>⌥ + ⌘ + B</td>
+</tr>
+</tbody></table>
+<p><img src="http://img.jeson.club:26/2020/04/01/5380e262d9754.png" alt="image.png"></p>
+<blockquote>
+<p>更多表达式相关内容请参考<a href="http://support.typora.io/Math/">官方文档</a></p>
+</blockquote>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><blockquote>
+<p>这里仅做展示，更多图表相关内容请参考<a href="http://support.typora.io/Draw-Diagrams-With-Markdown/">官方文档</a></p>
+</blockquote>
+<h4 id="流程图（Flowchart）"><a href="#流程图（Flowchart）" class="headerlink" title="流程图（Flowchart）"></a>流程图（Flowchart）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: Start:&gt;http:&#x2F;&#x2F;www.google.com[blank]</span><br><span class="line">e&#x3D;&gt;end:&gt;http:&#x2F;&#x2F;www.google.com</span><br><span class="line">op1&#x3D;&gt;operation: My Operation</span><br><span class="line">sub1&#x3D;&gt;subroutine: My Subroutine</span><br><span class="line">cond&#x3D;&gt;condition: Yes</span><br><span class="line">or No?:&gt;http:&#x2F;&#x2F;www.google.com</span><br><span class="line">io&#x3D;&gt;inputoutput: catch something...</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op1</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/eb71077e2764f.png" alt="image-20200401180129643" style="zoom:50%;" />
+
+<h4 id="流程图（Mermaid）"><a href="#流程图（Mermaid）" class="headerlink" title="流程图（Mermaid）"></a>流程图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    开始--&gt;条件B;</span><br><span class="line">    条件A--&gt;条件C;</span><br><span class="line">    条件B--&gt;条件D;</span><br><span class="line">    条件C--&gt;条件D;</span><br><span class="line">    条件A--&gt;条件D;</span><br><span class="line">    开始--&gt;条件C;</span><br><span class="line">    开始--&gt;条件A;</span><br><span class="line">    条件D--&gt;结束;</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/74208e0ab53d1.png" alt="image-20200401180204692" style="zoom:50%;" />
+
+<h4 id="时序图（Mermaid）"><a href="#时序图（Mermaid）" class="headerlink" title="时序图（Mermaid）"></a>时序图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant Alice</span><br><span class="line">    participant Bob</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    loop Healthcheck</span><br><span class="line">        John-&gt;&gt;John: Fight against hypochondria</span><br><span class="line">    end</span><br><span class="line">    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail...</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br><span class="line">    John-&gt;&gt;Bob: How about you?</span><br><span class="line">    Bob--&gt;&gt;John: Jolly good!</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/297b4d1ec7ea5.png" alt="image-20200401180301772" style="zoom:50%;" />
+
+<h4 id="时序图（Sequence）"><a href="#时序图（Sequence）" class="headerlink" title="时序图（Sequence）"></a>时序图（Sequence）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">Note right of John: Rational thoughts</span><br><span class="line">John--&gt;&gt;Alice: Great!</span><br><span class="line">John-&gt;&gt;Bob: How about you?</span><br><span class="line">Bob--&gt;&gt;John: Jolly good!</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/1412da25b8177.png" alt="image-20200401180320644" style="zoom:50%;" />
+
+<h4 id="甘特图（Mermaid）"><a href="#甘特图（Mermaid）" class="headerlink" title="甘特图（Mermaid）"></a>甘特图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line">        section A section</span><br><span class="line">        Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">        Future task               :         des3, after des2, 5d</span><br><span class="line">        Future task2               :         des4, after des3, 5d</span><br><span class="line">        section Critical tasks</span><br><span class="line">        Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">        Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">        Create tests for parser             :crit, active, 3d</span><br><span class="line">        Future task in critical line        :crit, 5d</span><br><span class="line">        Create tests for renderer           :2d</span><br><span class="line">        Add to mermaid                      :1d</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/c05db9a03bf05.png" alt="image-20200401180355249" style="zoom:50%;" />
+
+<h4 id="类图（Mermaid）"><a href="#类图（Mermaid）" class="headerlink" title="类图（Mermaid）"></a>类图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">Class01 &lt;|-- AveryLongClass : Cool</span><br><span class="line">Class03 *-- Class04</span><br><span class="line">Class05 o-- Class06</span><br><span class="line">Class07 .. Class08</span><br><span class="line">Class09 --&gt; C2 : Where am i?</span><br><span class="line">Class09 --* C3</span><br><span class="line">Class09 --|&gt; Class07</span><br><span class="line">Class07 : equals()</span><br><span class="line">Class07 : Object[] elementData</span><br><span class="line">Class01 : size()</span><br><span class="line">Class01 : int chimp</span><br><span class="line">Class01 : int gorilla</span><br><span class="line">Class08 &lt;--&gt; C2: Cool label</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/6e57a5fb3d7c7.png" alt="image-20200401180421925" style="zoom:50%;" />
+
+<h4 id="状态图（Mermaid）"><a href="#状态图（Mermaid）" class="headerlink" title="状态图（Mermaid）"></a>状态图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; Still</span><br><span class="line">    Still --&gt; [*]</span><br><span class="line"></span><br><span class="line">    Still --&gt; Moving</span><br><span class="line">    Moving --&gt; Still</span><br><span class="line">    Moving --&gt; Crash</span><br><span class="line">    Crash --&gt; [*]</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/7569ba3163b48.png" alt="image-20200401180448405" style="zoom:50%;" />
+
+<h4 id="饼图（Mermaid）"><a href="#饼图（Mermaid）" class="headerlink" title="饼图（Mermaid）"></a>饼图（Mermaid）</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Pie Chart</span><br><span class="line">    &quot;Dogs&quot; : 386</span><br><span class="line">    &quot;Cats&quot; : 85</span><br><span class="line">    &quot;Rats&quot; : 150</span><br></pre></td></tr></table></figure>
+
+<img src="http://img.jeson.club:26/2020/04/01/dae5c5cd21c6e.png" alt="image-20200401180524030" style="zoom:50%;" />]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多终端编辑 hexo 博客</title>
     <url>/2020/03/31/multi-terminal-hexo/</url>
     <content><![CDATA[<blockquote>
@@ -54,15 +419,15 @@
 <p><strong>基础配置</strong></p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">''</span>        <span class="comment"># 标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">''</span>     <span class="comment"># 副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span>  <span class="comment"># 描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">''</span>     <span class="comment"># 关键字</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">''</span>       <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>  <span class="comment"># 语言</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span>     <span class="comment"># 时区</span></span><br></pre></td></tr></table></figure>
 
-<p>其他配置详见<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">官方文档</a></p>
+<p>其他配置详见<a href="https://hexo.io/zh-cn/docs/configuration">官方文档</a></p>
 <p><strong>本地启动</strong></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可查看欢迎页</p>
+<p>在浏览器中输入 <a href="http://localhost:4000">http://localhost:4000</a> 即可查看欢迎页</p>
 <h4 id="修改主题-可选"><a href="#修改主题-可选" class="headerlink" title="修改主题(可选)"></a>修改主题(可选)</h4><blockquote>
 <p>hexo 主题多种多样，只需要 clone 到 ./themes 中即可，操作步骤大同小异</p>
 </blockquote>
-<p>这里以<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">diaspora</a>主题为例</p>
+<p>这里以<a href="https://github.com/Fechin/hexo-theme-diaspora">diaspora</a>主题为例</p>
 <p><strong>安装主题</strong></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora</span><br></pre></td></tr></table></figure>
 
@@ -82,19 +447,19 @@
 <p><strong>部署到 Github</strong></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-<p>此时访问 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 已经可以浏览站点了</p>
+<p>此时访问 <code><a href="https://username.github.io">https://username.github.io</a></code> 已经可以浏览站点了</p>
 <blockquote>
 <p>若出现 git 报错，ERROR Deployer not found: git，将 git 插件卸载再安装就好了</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h4 id="域名绑定（可选）"><a href="#域名绑定（可选）" class="headerlink" title="域名绑定（可选）"></a>域名绑定（可选）</h4><blockquote>
-<p>有些同学可能对 <code><a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></code> 这个域名并不满意，希望替换到自己域名</p>
+<p>有些同学可能对 <code><a href="https://username.github.io">https://username.github.io</a></code> 这个域名并不满意，希望替换到自己域名</p>
 </blockquote>
 <p><strong>域名申请</strong></p>
 <blockquote>
 <p> 推荐去国外的域名注册商除注册，不需要备案，非常快</p>
 </blockquote>
-<p>演示已经在 <a href="https://sg.godaddy.com/zh" target="_blank" rel="noopener">GoDaddy</a> 注册好域名 <code>jeosn.club</code></p>
+<p>演示已经在 <a href="https://sg.godaddy.com/zh">GoDaddy</a> 注册好域名 <code>jeosn.club</code></p>
 <p><strong>配置CNAME</strong></p>
 <p>在 <code>./source</code> 中创建名为 <code>CNAME</code> 的文件，保存申请的域名</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.jeson.club</span><br></pre></td></tr></table></figure>
@@ -104,7 +469,7 @@
 
 <p><strong>域名解析</strong></p>
 <blockquote>
-<p>推荐使用<a href="https://console.dnspod.cn/" target="_blank" rel="noopener">DNSPod</a>（需要注册），GoGaddy提供的解析，<code>CNAME</code>无法添加 <strong>@</strong> 记录</p>
+<p>推荐使用<a href="https://console.dnspod.cn/">DNSPod</a>（需要注册），GoGaddy提供的解析，<code>CNAME</code>无法添加 <strong>@</strong> 记录</p>
 </blockquote>
 <p>在 <strong>DNS 管理</strong>中，修改自定义域名服务器为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code></p>
 <p><img src="http://img.jeson.club:26/2020/03/31/45fc91522dc50.png" alt="hexoblog-2"></p>
@@ -112,7 +477,7 @@
 <p><img src="http://img.jeson.club:26/2020/03/31/09a2b2513b5c2.png" alt="hexoblog-3"></p>
 <p>在浏览器中输入域名即可访问站点</p>
 <blockquote>
-<p>图片支持基于 <a href="https://github.com/wisp-x/lsky-pro" target="_blank" rel="noopener">Lsky Pro</a> 自建图床</p>
+<p>图片支持基于 <a href="https://github.com/wisp-x/lsky-pro">Lsky Pro</a> 自建图床</p>
 </blockquote>
 ]]></content>
       <categories>
