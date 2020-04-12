@@ -9,28 +9,28 @@ tags:
 
 > 提前安装好 GIT 和Node.js，其中 GIT 需要配置好 SSH key
 
-#### 配置 hexo
+## 配置 hexo
 
-**安装 hexo**
+### 安装 hexo
 
 ~~~cmd
 npm install -g hexo-cli
 ~~~
 
-**创建 blog 目录**
+### 创建 blog 目录
 
 ~~~cmd
 hexo init blog
 ~~~
 
-**安装相关依赖**
+### 安装相关依赖
 
 ~~~cmd
 cd blog
 npm install
 ~~~
 
-**基础配置**
+### 基础配置
 
 ~~~yml
 # _config.yml
@@ -45,7 +45,7 @@ timezone: ''     # 时区
 
 其他配置详见[官方文档](https://hexo.io/zh-cn/docs/configuration)
 
-**本地启动**
+### 本地启动
 
 ~~~cmd
 hexo s
@@ -53,19 +53,19 @@ hexo s
 
 在浏览器中输入 <http://localhost:4000> 即可查看欢迎页
 
-#### 修改主题(可选)
+## 修改主题(可选)
 
 > hexo 主题多种多样，只需要 clone 到 ./themes 中即可，操作步骤大同小异
 
 这里以[diaspora](https://github.com/Fechin/hexo-theme-diaspora)主题为例
 
-**安装主题**
+### 安装主题
 
 ~~~cmd
 git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora
 ~~~
 
-**启用主题**
+### 启用主题
 
 ~~~yml
 # _config.yml
@@ -76,7 +76,7 @@ theme: diaspora
 
 详细配置可参考不同主题的文档
 
-**预览主题**
+### 预览主题
 
 ~~~cmd
 hexo clean
@@ -84,15 +84,15 @@ hexo g
 hexo s
 ~~~
 
-#### Github 绑定
+## Github 绑定
 
-**创建仓库**
+### 创建仓库
 
 创建一个名为<code>username.github.io</code>的仓库，其中 **username** 为你的用户名
 
 ![hexoblog-1](http://img.jeson.club:26/2020/03/31/ef060ee8dffe4.png)
 
-**配置 Github 地址**
+### 配置 Github 地址
 
 ~~~yml
 # _config.yml
@@ -102,7 +102,7 @@ deploy:
   branch: master
 ~~~
 
-**部署到 Github**
+### 部署到 Github
 
 ~~~cmd
 hexo g
@@ -118,17 +118,17 @@ hexo d
 > npm install hexo-deployer-git --save
 > ~~~
 
-#### 域名绑定（可选）
+## 域名绑定（可选）
 
 > 有些同学可能对 <code>https://username.github.io</code> 这个域名并不满意，希望替换到自己域名
 
-**域名申请**
+### 域名申请
 
 >  推荐去国外的域名注册商除注册，不需要备案，非常快
 
 演示已经在 [GoDaddy](https://sg.godaddy.com/zh) 注册好域名 <code>jeosn.club</code>
 
-**配置CNAME**
+### 配置CNAME
 
 在 <code>./source</code> 中创建名为 <code>CNAME</code> 的文件，保存申请的域名
 
@@ -142,7 +142,7 @@ www.jeson.club
 hexo d
 ~~~
 
-**域名解析**
+### 域名解析
 
 > 推荐使用[DNSPod](https://console.dnspod.cn/)（需要注册），GoGaddy提供的解析，<code>CNAME</code>无法添加 **@** 记录
 
@@ -155,4 +155,9 @@ hexo d
 ![hexoblog-3](http://img.jeson.club:26/2020/03/31/09a2b2513b5c2.png)
 
 在浏览器中输入域名即可访问站点
+
 > 图片支持基于 [Lsky Pro](https://github.com/wisp-x/lsky-pro) 自建图床
+
+## 其他问题
+
+如果还想创建静态博客，可参考 <https://pages.github.com/> 创建 `Github Page`
