@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>「笔记」Git 常用指令 | 粥盐籽</title><meta name="author" content="Posase"><meta name="copyright" content="Posase"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基础常用指令   指令 说明    git init 初始化一个 git 仓库   git clone [-o &lt;remote&gt;] &lt;url&gt; [&lt;name&gt;] 克隆一个远程仓库，可指定项目文件夹名字 会自动设置好对应远程仓库的默认分支   git add [-i&#x2F;--interactive] [-p&#x2F;--patch] &lt;file&gt;&#x2F;&lt;dir&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「笔记」Git 常用指令">
+<meta property="og:url" content="https://www.posase.im/posts/efff8d67/index.html">
+<meta property="og:site_name" content="粥盐籽">
+<meta property="og:description" content="基础常用指令   指令 说明    git init 初始化一个 git 仓库   git clone [-o &lt;remote&gt;] &lt;url&gt; [&lt;name&gt;] 克隆一个远程仓库，可指定项目文件夹名字 会自动设置好对应远程仓库的默认分支   git add [-i&#x2F;--interactive] [-p&#x2F;--patch] &lt;file&gt;&#x2F;&lt;dir&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.posase.im/img/cover.jpg">
+<meta property="article:published_time" content="2023-03-18T02:40:12.000Z">
+<meta property="article:modified_time" content="2023-03-18T02:40:12.000Z">
+<meta property="article:author" content="Posase">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.posase.im/img/cover.jpg"><link rel="shortcut icon" href="/img/zyz.png"><link rel="canonical" href="https://www.posase.im/posts/efff8d67/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;10457b82ec7e4763b5b11f0250e30c1b&quot;}"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"本文最后更新于","messageNext":"天前，其中信息可能已经不够准确，请酌情参考！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '「笔记」Git 常用指令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-18 10:40:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/zyz.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/cover.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="粥盐籽"><span class="site-name">粥盐籽</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">「笔记」Git 常用指令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-18T02:40:12.000Z" title="发表于 2023-03-18 10:40:12">2023-03-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-18T02:40:12.000Z" title="更新于 2023-03-18 10:40:12">2023-03-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="「笔记」Git 常用指令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="基础常用指令"><a href="#基础常用指令" class="headerlink" title="基础常用指令"></a>基础常用指令</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git init</code></td>
+<td>初始化一个 <code>git</code> 仓库</td>
+</tr>
+<tr>
+<td><code>git clone [-o &lt;remote&gt;] &lt;url&gt; [&lt;name&gt;]</code></td>
+<td>克隆一个远程仓库，可指定项目文件夹名字<br> 会自动设置好对应远程仓库的默认分支</td>
+</tr>
+<tr>
+<td><code>git add [-i/--interactive] [-p/--patch] &lt;file&gt;/&lt;dir&gt;/* </code></td>
+<td>添加文件&#x2F;文件夹&#x2F;全部记录到到暂存区<br><code>-i</code> 交互式暂存<br><code>-p</code> 选择部分文件暂存</td>
+</tr>
+<tr>
+<td><code>git status [-s/--short]</code></td>
+<td>查看哪些文件处于哪些状态，<code>-s</code> 输出紧凑格式文件<br>前面的两个标志分别是暂存区和工作区状态</td>
+</tr>
+<tr>
+<td><code>git diff [HEAD/--cached]</code></td>
+<td>无参数表示比较工作区和暂存区的区别<br><code>HEAD</code> 表示比较本地仓库和工作区的区别<br><code>--cached</code> 表示比较本地仓库和暂存区的区别</td>
+</tr>
+<tr>
+<td><code>git rm [-f] [--cached] &lt;file&gt;/&lt;dir&gt; </code></td>
+<td>移除文件<br><code>-f</code> 强制删除<br><code>--cached</code> 仅删除暂存区的文件</td>
+</tr>
+<tr>
+<td><code>git commit [-a] [-m &quot;msg&quot;]</code></td>
+<td>提交暂存区到本地仓库<br><code>-a</code> 会自动添加所有已修改文件<br><code>-m &quot;msg&quot;</code> 可以将提交消息写在一行</td>
+</tr>
+<tr>
+<td><code>git mv &lt;file_from&gt; &lt;file_to&gt;</code></td>
+<td>对文件进行改名<br> 相当于 <code>rename</code> -&gt; <code>rm</code> -&gt; <code>add</code></td>
+</tr>
+<tr>
+<td><code>git log [more]</code></td>
+<td>查看提交日志，选项较多，下面介绍</td>
+</tr>
+<tr>
+<td><code>git commit --amend</code></td>
+<td>撤销操作，替换上一次提交</td>
+</tr>
+<tr>
+<td><code>git reset &lt;file&gt;</code></td>
+<td>取消暂存文件</td>
+</tr>
+<tr>
+<td><code>git checkout -- &lt;file&gt;</code></td>
+<td>还原文件(Tips: 修改会丢失)</td>
+</tr>
+</tbody></table>
+<h3 id="git-log-常用选项"><a href="#git-log-常用选项" class="headerlink" title="git log 常用选项"></a><code>git log</code> 常用选项</h3><p><code>git log [...] [&lt;path&gt;]</code></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-p</code></td>
+<td>按补丁格式显示每个提交引入的差异。</td>
+</tr>
+<tr>
+<td><code>--stat</code></td>
+<td>显示每次提交的文件修改统计信息。</td>
+</tr>
+<tr>
+<td><code>--shortstat</code></td>
+<td>只显示 <code>--stat</code> 中最后的行数修改添加移除统计。</td>
+</tr>
+<tr>
+<td><code>--name-only</code></td>
+<td>仅在提交信息后显示已修改的文件清单。</td>
+</tr>
+<tr>
+<td><code>--name-status</code></td>
+<td>显示新增、修改、删除的文件清单。</td>
+</tr>
+<tr>
+<td><code>--abbrev-commit</code></td>
+<td>仅显示 SHA-1 校验和所有 40 个字符中的前几个字符。</td>
+</tr>
+<tr>
+<td><code>--relative-date</code></td>
+<td>使用较短的相对时间而不是完整格式显示日期（比如“2 weeks ago”）。</td>
+</tr>
+<tr>
+<td><code>--graph</code></td>
+<td>在日志旁以 ASCII 图形显示分支与合并历史。</td>
+</tr>
+<tr>
+<td><code>--pretty=&lt;mode&gt;</code></td>
+<td>使用其他格式显示历史提交信息。可用的选项包括 <code>oneline</code>、<code>short</code>、<code>full</code>、<code>fuller</code> 和 <code>format</code>（用来定义自己的格式）。</td>
+</tr>
+<tr>
+<td><code>--oneline</code></td>
+<td><code>--pretty=oneline</code> <code>--abbrev-commit</code> 合用的简写。</td>
+</tr>
+</tbody></table>
+<h4 id="format-常用选项"><a href="#format-常用选项" class="headerlink" title="format 常用选项"></a><code>format</code> 常用选项</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>%H</code></td>
+<td>提交的完整哈希值</td>
+</tr>
+<tr>
+<td><code>%h</code></td>
+<td>提交的简写哈希值</td>
+</tr>
+<tr>
+<td><code>%T</code></td>
+<td>树的完整哈希值</td>
+</tr>
+<tr>
+<td><code>%t</code></td>
+<td>树的简写哈希值</td>
+</tr>
+<tr>
+<td><code>%P</code></td>
+<td>父提交的完整哈希值</td>
+</tr>
+<tr>
+<td><code>%p</code></td>
+<td>父提交的简写哈希值</td>
+</tr>
+<tr>
+<td><code>%an</code></td>
+<td>作者名字</td>
+</tr>
+<tr>
+<td><code>%ae</code></td>
+<td>作者的电子邮件地址</td>
+</tr>
+<tr>
+<td><code>%ad</code></td>
+<td>作者修订日期（可以用 –date&#x3D;选项 来定制格式）</td>
+</tr>
+<tr>
+<td><code>%ar</code></td>
+<td>作者修订日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td><code>%cn</code></td>
+<td>提交者的名字</td>
+</tr>
+<tr>
+<td><code>%ce</code></td>
+<td>提交者的电子邮件地址</td>
+</tr>
+<tr>
+<td><code>%cd</code></td>
+<td>提交日期</td>
+</tr>
+<tr>
+<td><code>%cr</code></td>
+<td>提交日期（距今多长时间）</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>提交说明</td>
+</tr>
+</tbody></table>
+<h4 id="限制输出的常用选项"><a href="#限制输出的常用选项" class="headerlink" title="限制输出的常用选项"></a>限制输出的常用选项</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-&lt;n&gt;</code></td>
+<td>仅显示最近的 n 条提交。</td>
+</tr>
+<tr>
+<td><code>--since</code>&#x2F;<code>--after</code></td>
+<td>仅显示指定时间之后的提交。</td>
+</tr>
+<tr>
+<td><code>--until</code>&#x2F;<code>--before</code></td>
+<td>仅显示指定时间之前的提交。</td>
+</tr>
+<tr>
+<td><code>--author</code></td>
+<td>仅显示作者匹配指定字符串的提交。</td>
+</tr>
+<tr>
+<td><code>--committer</code></td>
+<td>仅显示提交者匹配指定字符串的提交。</td>
+</tr>
+<tr>
+<td><code>--grep</code></td>
+<td>仅显示提交说明中包含指定字符串的提交。</td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>仅显示添加或删除内容匹配指定字符串的提交。</td>
+</tr>
+<tr>
+<td><code>--no-merges</code></td>
+<td>隐藏合并提交</td>
+</tr>
+</tbody></table>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git remote [-v]</code></td>
+<td>查看远程仓库<br><code>-v</code> 显示对应<code>url</code></td>
+</tr>
+<tr>
+<td><code>git remote add &lt;remote&gt; &lt;url&gt;</code></td>
+<td>添加远程仓库</td>
+</tr>
+<tr>
+<td><code>git remote rm/remove &lt;remote&gt;</code></td>
+<td>删除远程仓库</td>
+</tr>
+<tr>
+<td><code>git remote show &lt;remote&gt;</code></td>
+<td>查看远程仓库信息</td>
+</tr>
+<tr>
+<td><code>git remote rename &lt;remote&gt; &lt;name&gt;</code>&gt;</td>
+<td>重命名远程仓库名</td>
+</tr>
+<tr>
+<td><code>git fetch &lt;remote&gt;</code></td>
+<td>拉取指定远程仓库的信息(不会合并)</td>
+</tr>
+<tr>
+<td><code>git pull &lt;remote&gt;</code></td>
+<td>拉取并合并指定远程仓库</td>
+</tr>
+<tr>
+<td><code>git push &lt;remote&gt; &lt;branch&gt;</code></td>
+<td>推送到远程指定分支</td>
+</tr>
+</tbody></table>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git tag [-l/--lig] &lt;grep&gt;</code></td>
+<td>查看所有标签，指定显示必须带<code>-l</code><br>指定显示如：<code>git tag -l &quot;v1.8.*&quot;</code></td>
+</tr>
+<tr>
+<td><code>git tag -a &lt;tag&gt; -m &quot;msg&quot;</code></td>
+<td>添加附注标签</td>
+</tr>
+<tr>
+<td><code>git tag &lt;tag&gt;</code></td>
+<td>添加轻量标签</td>
+</tr>
+<tr>
+<td><code>git show &lt;tag&gt;</code></td>
+<td>显示标签信息</td>
+</tr>
+<tr>
+<td><code>git push origin &lt;tag&gt;</code></td>
+<td>推送指定标签</td>
+</tr>
+<tr>
+<td><code>git push origin --tags</code></td>
+<td>推送不在远程仓库的所有标签</td>
+</tr>
+<tr>
+<td><code>git tag -d &lt;tag&gt;</code></td>
+<td>删除标签</td>
+</tr>
+<tr>
+<td><code>git push &lt;remote&gt; :refs/tags/&lt;tag&gt;</code></td>
+<td>删除远程标签1</td>
+</tr>
+<tr>
+<td><code>git push &lt;remote&gt; --delete &lt;tag&gt;</code></td>
+<td>删除远程标签2</td>
+</tr>
+<tr>
+<td><code>git checkout &lt;tag&gt;</code></td>
+<td>检出标签</td>
+</tr>
+</tbody></table>
+<h3 id="给过去的提交打标签"><a href="#给过去的提交打标签" class="headerlink" title="给过去的提交打标签"></a>给过去的提交打标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch <span class="string">&#x27;experiment&#x27;</span></span><br><span class="line">a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support</span><br><span class="line">0d52aaab4479697da7686c15f77a3d64d9165190 one more thing</span><br><span class="line">6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch <span class="string">&#x27;experiment&#x27;</span></span><br><span class="line">0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit <span class="keyword">function</span></span><br><span class="line">4682c3261057305bdd616e23b64b0857d832627b added a todo file</span><br><span class="line">166ae0c4d3f420721acbb115cc33848dfcc2121a started write support</span><br><span class="line">9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile</span><br><span class="line">964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo</span><br><span class="line">8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给 9fceb02d0ae598e95dc970b74767f19372d61af8 打标签</span></span><br><span class="line">$ git tag -a v1.2 9fceb02</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支常用指令"><a href="#分支常用指令" class="headerlink" title="分支常用指令"></a>分支常用指令</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git branch [-v] [-vv] [--merged] [--no-merged]</code></td>
+<td><code>-v</code>查看所有分支，<code>*</code>表示当前分支<br><code>-vv</code>包含更多信息<br>附带最后一次提交<br> 查看已经合并&#x2F;未合并分支</td>
+</tr>
+<tr>
+<td><code>git branch [-d/D] &lt;branch&gt;</code></td>
+<td>新建分支<br><code>-d</code> 删除分支<br><code>-D</code> 强制删除未合并分支</td>
+</tr>
+<tr>
+<td><code>git checkout [-b] &lt;branch&gt;</code></td>
+<td>切换分支<br><code>-b</code>会先新建再切换</td>
+</tr>
+<tr>
+<td><code>git log [more] --decorate</code></td>
+<td>查看分支所指的对象</td>
+</tr>
+<tr>
+<td><code>git log --oneline --decorate --graph --all</code></td>
+<td>查看分叉历史</td>
+</tr>
+<tr>
+<td><code>git merge &lt;branch&gt;</code></td>
+<td>合并指定分支到当前分支</td>
+</tr>
+<tr>
+<td><code>git branch -u/--set-upstream-to &lt;remote&gt;/&lt;branch&gt;</code></td>
+<td>跟踪远程分支</td>
+</tr>
+</tbody></table>
+<p><code>HEAD</code> 指向当前所在的分支，切换分支后，所有的提交会在新分支上移动</p>
+<p>所有的切换操作的都是本地分支，远程分支只是一个指向某快照的指针 可以选择合并到主分支开发<br>如果想开发非主分支，可以新建一个分支并跟踪分支 <code>git checkout -b test origin/test</code><br>由于比较常用，<code>git checkout --track origin/test</code> <code>git checkout test</code> 可以实现一样的效果</p>
+<p>使用 <code>git status</code> 查看合并冲突，解决合并冲突后，使用 <code>git add</code> 标记冲突已解决</p>
+<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分支信息中 `ahead` 表示没提交到远程分支，`behind` 表示没拉取下来</span></span><br><span class="line">`git fetch --all; git branch -vv` <span class="comment"># 查看分支信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果存在跟踪的上游分支，可以使用 `@&#123;upstream&#125;`/`@&#123;u&#125;` 来表示上游分支</span></span><br><span class="line">如：`git merge origin/master` -&gt; `git merge @&#123;u&#125;`</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到指定分支并删除分支</span></span><br><span class="line">git push origin --delete del_branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 贮藏</span></span><br><span class="line"><span class="comment"># 分支只能在已经提交的版本上切换，当本地存在未提交的文件时无法切换</span></span><br><span class="line">git stash push <span class="comment"># 记录当前未提交版本 只能记录跟踪文件</span></span><br><span class="line">git stash list <span class="comment"># 查看记录</span></span><br><span class="line">git stash apply [stash@&#123;n&#125;] <span class="comment"># 还原记录版本 默认最新的</span></span><br><span class="line">git stash --index <span class="comment"># 如果其中存在之前暂存的，添加到暂存区</span></span><br><span class="line">git stash drop/pop <span class="comment"># drop 移除指定记录 pop 丢掉最新的</span></span><br><span class="line">git stash --keep-index <span class="comment"># 记录并保存下来</span></span><br><span class="line"><span class="comment"># 可以记录未跟踪文件 如果包含忽略的文件 需要 -a/--all -p/--patch 交互式记录部分变更</span></span><br><span class="line">git stash -u/--include-untracked </span><br><span class="line">git stash branch &lt;branch&gt; <span class="comment"># 使用记录新建一个分支</span></span><br><span class="line"></span><br><span class="line">git clean [-f] [-d] [-n/--dry-run] [-x] <span class="comment"># 清理未跟踪且未忽略的文件</span></span><br><span class="line"><span class="comment"># -f 强制</span></span><br><span class="line"><span class="comment"># -d 空文件夹</span></span><br><span class="line"><span class="comment"># -x 忽略文件也移除</span></span><br><span class="line"><span class="comment"># -n 显示移除哪些，并不移除</span></span><br><span class="line"></span><br><span class="line">git update-index --assume-unchanged &lt;file&gt; <span class="comment"># 忽略跟踪文件</span></span><br><span class="line">git update-index --no-assume-unchanged &lt;file&gt; <span class="comment"># 恢复跟踪</span></span><br><span class="line"></span><br><span class="line">git merge &lt;branch&gt; <span class="comment"># 合并某分支内容，包含提交信息并增加一条合并的提交信息</span></span><br><span class="line"><span class="comment"># --no-commit 不包含增加的合并信息</span></span><br><span class="line"><span class="comment"># --squash 只合分支内容，不包含任何提交信息</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h2><p>只对尚未推送或分享给别人的本地修改执行变基操作清理历史， 从不对已推送至别处的提交执行<br>变基操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git rebase master <span class="comment"># 相当于把当前分支合并到 master</span></span><br><span class="line">git rebase --onto master server client <span class="comment"># 相当于 client 合并去除 server 合并到 master</span></span><br><span class="line">git rebase master server <span class="comment"># 相当于把 server 合并到 master</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 变基后不会合并内容，所以还需要切换+合并</span></span><br><span class="line">git checkout master</span><br><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置默认编辑器</span></span><br><span class="line">git config --global core.editor vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置别名</span></span><br><span class="line">git config --global alias.ci commit</span><br></pre></td></tr></table></figure>
+
+<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>新建 <code>.gitignore</code> 文件，可以讲非项目文件进行忽略，子目录也可以有改文件，只作用于子目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 忽略所有 .o/.a 结尾的文件</span><br><span class="line">*.[oa]</span><br><span class="line"></span><br><span class="line"># 忽略 bin 文件夹下的所有文件，如果存在 bin 文件，不会被忽略</span><br><span class="line">bin/</span><br><span class="line"></span><br><span class="line"># 忽略根目录下的 bin 文件</span><br><span class="line">/bin</span><br><span class="line"></span><br><span class="line"># 忽略类似 /test a/test a/b/test 文件</span><br><span class="line">**/test</span><br><span class="line"></span><br><span class="line"># 不忽略 test 文件</span><br><span class="line">!test</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/github/gitignore">Github 语言分类示例</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.posase.im">Posase</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.posase.im/posts/efff8d67/">https://www.posase.im/posts/efff8d67/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.posase.im" target="_blank">粥盐籽</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/img/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/a747f4e9/" title="「笔记」Erlang 学习笔记"><img class="cover" src="/img/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">「笔记」Erlang 学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/posts/25b5c556/" title="「笔记」Butterfly简单配置"><img class="cover" src="/img/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">「笔记」Butterfly简单配置</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/zyz.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Posase</div><div class="author-info__description">Posase</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jesongit" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:188380780@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">基础常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log-%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-number">1.1.</span> <span class="toc-text">git log 常用选项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#format-%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-number">1.1.1.</span> <span class="toc-text">format 常用选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E8%BE%93%E5%87%BA%E7%9A%84%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">限制输出的常用选项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-number">3.</span> <span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99%E8%BF%87%E5%8E%BB%E7%9A%84%E6%8F%90%E4%BA%A4%E6%89%93%E6%A0%87%E7%AD%BE"><span class="toc-number">3.1.</span> <span class="toc-text">给过去的提交打标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">分支常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E"><span class="toc-number">4.1.</span> <span class="toc-text">其他说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%9F%BA"><span class="toc-number">5.</span> <span class="toc-text">变基</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">常用设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">忽略文件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/5ec05c2f/" title="「笔记」WSL 相关笔记"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「笔记」WSL 相关笔记"/></a><div class="content"><a class="title" href="/posts/5ec05c2f/" title="「笔记」WSL 相关笔记">「笔记」WSL 相关笔记</a><time datetime="2023-12-24T13:37:02.000Z" title="发表于 2023-12-24 21:37:02">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8cb8b390/" title="「笔记」Erlang 常用启动参数"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「笔记」Erlang 常用启动参数"/></a><div class="content"><a class="title" href="/posts/8cb8b390/" title="「笔记」Erlang 常用启动参数">「笔记」Erlang 常用启动参数</a><time datetime="2023-12-23T05:49:04.000Z" title="发表于 2023-12-23 13:49:04">2023-12-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/da8307a0/" title="「笔记」Elixir 学习笔记"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「笔记」Elixir 学习笔记"/></a><div class="content"><a class="title" href="/posts/da8307a0/" title="「笔记」Elixir 学习笔记">「笔记」Elixir 学习笔记</a><time datetime="2023-06-27T02:39:53.000Z" title="发表于 2023-06-27 10:39:53">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a51d42d4/" title="「笔记」PVE 折腾手册"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「笔记」PVE 折腾手册"/></a><div class="content"><a class="title" href="/posts/a51d42d4/" title="「笔记」PVE 折腾手册">「笔记」PVE 折腾手册</a><time datetime="2023-04-08T07:53:10.000Z" title="发表于 2023-04-08 15:53:10">2023-04-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9630983a/" title="「笔记」Debian 折腾手册"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「笔记」Debian 折腾手册"/></a><div class="content"><a class="title" href="/posts/9630983a/" title="「笔记」Debian 折腾手册">「笔记」Debian 折腾手册</a><time datetime="2023-04-08T07:00:28.000Z" title="发表于 2023-04-08 15:00:28">2023-04-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Posase</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css/dist/style.min.css"/><script src="https://cdn.jsdelivr.net/npm/@docsearch/js/dist/umd/index.min.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: 'EK48PQHZAW',
+    apiKey: 'f04e73c59d5a5578630f8397d958fe13',
+    indexName: 'posase',
+    container: '#docsearch',
+  }, null))
+
+
+  const searchClickFn = () => {
+    document.querySelector('#search-button > .search').addEventListener('click', () => {
+      document.querySelector('.DocSearch-Button').click()
+    })
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div></body></html>
